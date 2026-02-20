@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRS Hero & Layout Examples</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#282824", secondary: "#BC002D" },
+                    borderRadius: {
+                        button: "8px",
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #EEECE6;
+        }
+        h1, h2, h3 {
+            font-family: 'Noto Sans JP', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        /* Hero section styles */
+        .hero-section {
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(238, 236, 230, 0.9) 0%,
+                rgba(238, 236, 230, 0.7) 50%,
+                rgba(238, 236, 230, 0.1) 100%
+            );
+            z-index: 1;
+        }
+        .hero-section.dark::before {
+            background: linear-gradient(
+                90deg,
+                rgba(40, 40, 36, 0.8) 0%,
+                rgba(40, 40, 36, 0.6) 100%
+            );
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Japanese pattern separator */
+        .japanese-pattern {
+            height: 12px;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='12' viewBox='0 0 60 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12c3.314 0 6-2.686 6-6S9.314 0 6 0 0 2.686 0 6s2.686 6 6 6zm12 0c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm12 0c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm12 0c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm12 0c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6z' fill='%23DDD6CC' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body>
+    <!-- Standard Hero Section -->
+    <section class="hero-section h-[600px] flex items-center relative"
+        style="background-image: url('https://picsum.photos/1920/600?random=1');">
+        <div class="container mx-auto px-4">
+            <div class="hero-content max-w-2xl">
+                <h1 class="text-5xl font-light mb-6 leading-tight">
+                    Shorin-Ryu <span class="text-secondary font-medium">Seibukan</span>
+                </h1>
+                <p class="text-lg mb-8 max-w-xl">
+                    Shorin-Ryu Seibukan Karate-Union Deutschland e.V.<br />
+                    Lerne das ursprüngliche Karate und Kobudo aus Okinawa.
+                </p>
+                <div class="flex space-x-4 flex-wrap gap-y-4">
+                    <a href="#" class="bg-primary text-white px-6 py-3 !rounded-[8px] hover:bg-opacity-90 transition whitespace-nowrap">
+                        Dojo finden
+                    </a>
+                    <a href="#" class="border-2 border-primary px-6 py-3 !rounded-[8px] hover:bg-primary hover:text-white transition whitespace-nowrap">
+                        Aktuelles
+                    </a>
+                    <a href="#" class="border-2 border-primary px-6 py-3 !rounded-[8px] hover:bg-primary hover:text-white transition whitespace-nowrap">
+                        Wichtige Infos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section with Container -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-medium mb-6 text-primary text-center">Standard Content Section</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                This demonstrates a standard content section with centered text, proper spacing, and container wrapping.
+            </p>
+
+            <!-- 4-Column Grid Example -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mb-4">
+                        <i class="ri-medal-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Tradition</h3>
+                    <p class="text-gray-600 text-sm">Authentisches Okinawa Karate seit über 50 Jahren</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mb-4">
+                        <i class="ri-team-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Gemeinschaft</h3>
+                    <p class="text-gray-600 text-sm">Über 30 Dojos in ganz Deutschland</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mb-4">
+                        <i class="ri-trophy-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Qualität</h3>
+                    <p class="text-gray-600 text-sm">Hochqualifizierte Trainer und Prüfer</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mb-4">
+                        <i class="ri-calendar-event-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Events</h3>
+                    <p class="text-gray-600 text-sm">Regelmäßige Seminare und Lehrgänge</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Japanese Pattern Separator -->
+    <div class="japanese-pattern w-full"></div>
+
+    <!-- Dark Hero Section -->
+    <section class="hero-section dark h-[400px] flex items-center relative"
+        style="background-image: url('https://picsum.photos/1920/400?random=2');">
+        <div class="container mx-auto px-4">
+            <div class="hero-content max-w-2xl text-white">
+                <h1 class="text-4xl font-light mb-6 leading-tight">
+                    Shop <span class="text-secondary font-medium">Premium Ausrüstung</span>
+                </h1>
+                <p class="text-lg mb-8 max-w-xl">
+                    Hochwertige Karate- und Kobudo-Ausrüstung für Training und Wettkampf.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="bg-secondary text-white px-6 py-3 !rounded-[8px] hover:bg-opacity-90 transition whitespace-nowrap">
+                        Zum Shop
+                    </a>
+                    <a href="#" class="border-2 border-white px-6 py-3 !rounded-[8px] hover:bg-white hover:text-primary transition whitespace-nowrap">
+                        Kategorien
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two-Column Layout -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-medium mb-12 text-primary text-center">Two-Column Layout</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Text Column -->
+                <div>
+                    <h3 class="text-2xl font-medium mb-4 text-primary">Karate für Kinder</h3>
+                    <p class="text-gray-600 mb-4">
+                        Unser speziell entwickeltes Kinder-Karatetraining fördert nicht nur die körperliche Fitness, sondern auch wichtige soziale Kompetenzen wie Disziplin, Respekt und Selbstbewusstsein.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        In altersgerechten Gruppen lernen Kinder ab 6 Jahren die Grundlagen des traditionellen Okinawa-Karate in einer sicheren und motivierenden Umgebung.
+                    </p>
+                    <a href="#" class="bg-primary text-white px-6 py-3 !rounded-[8px] hover:bg-opacity-90 transition inline-flex items-center gap-2 whitespace-nowrap">
+                        Mehr erfahren
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+                <!-- Image Column -->
+                <div>
+                    <img src="https://picsum.photos/600/400?random=3" alt="Kinder Karate" class="w-full rounded-lg shadow-lg" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three-Column Layout with Icons -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-medium mb-12 text-primary text-center">Unsere Werte</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-secondary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-shield-check-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Respekt</h3>
+                    <p class="text-gray-600">
+                        Gegenseitiger Respekt und Wertschätzung sind die Grundlage unseres Trainings und unserer Gemeinschaft.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-secondary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-compass-3-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Disziplin</h3>
+                    <p class="text-gray-600">
+                        Durch konsequentes Training und Selbstdisziplin entwickeln wir körperliche und geistige Stärke.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-secondary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-heart-3-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Tradition</h3>
+                    <p class="text-gray-600">
+                        Wir bewahren und pflegen die jahrhundertealten Traditionen des authentischen Okinawa-Karate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full-Width Background Section -->
+    <section class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-light mb-6">Bereit für dein erstes Training?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+                Finde ein Dojo in deiner Nähe und beginne noch heute deine Reise in die Welt des traditionellen Karate.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="bg-secondary text-white px-8 py-4 !rounded-[8px] hover:bg-opacity-90 transition whitespace-nowrap">
+                    Dojo finden
+                </a>
+                <a href="#" class="border-2 border-white px-8 py-4 !rounded-[8px] hover:bg-white hover:text-primary transition whitespace-nowrap">
+                    Kontakt aufnehmen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Side-by-Side Content (Alternating) -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Row 1 - Image Left -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <img src="https://picsum.photos/600/400?random=4" alt="Training" class="w-full rounded-lg shadow-lg" />
+                </div>
+                <div>
+                    <h3 class="text-2xl font-medium mb-4 text-primary">Anfängertraining</h3>
+                    <p class="text-gray-600 mb-4">
+                        Keine Vorkenntnisse erforderlich. In unseren Anfängerkursen lernst du Schritt für Schritt die Grundlagen des Karate.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-600">
+                            <i class="ri-check-line text-secondary mr-2"></i>
+                            Grundtechniken und Stellungen
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="ri-check-line text-secondary mr-2"></i>
+                            Einfache Kata-Formen
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="ri-check-line text-secondary mr-2"></i>
+                            Partnerübungen
+                        </li>
+                    </ul>
+                    <a href="#" class="text-secondary font-medium flex items-center">
+                        Mehr erfahren
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Row 2 - Image Right -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-medium mb-4 text-primary">Fortgeschrittenentraining</h3>
+                    <p class="text-gray-600 mb-4">
+                        Vertiefe dein Wissen und perfektioniere deine Techniken unter Anleitung erfahrener Meister.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-600">
+                            <i class="ri-check-line text-secondary mr-2"></i>
+                            Fortgeschrittene Kata
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="ri-check-line text-secondary mr-2"></i>
+                            Kumite-Training
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="ri-check-line text-secondary mr-2"></i>
+                            Kobudo-Waffentraining
+                        </li>
+                    </ul>
+                    <a href="#" class="text-secondary font-medium flex items-center">
+                        Mehr erfahren
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="https://picsum.photos/600/400?random=5" alt="Advanced Training" class="w-full rounded-lg shadow-lg" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Examples Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <h2 class="text-2xl font-medium mb-6 text-primary">Code Examples</h2>
+
+                <div class="space-y-6">
+                    <div>
+                        <p class="font-medium mb-2">Standard Hero Section:</p>
+                        <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-xs"><code>&lt;section class="hero-section h-[600px] flex items-center relative"
+    style="background-image: url('/assets/hero-image-id');"&gt;
+    &lt;div class="container mx-auto px-4"&gt;
+        &lt;div class="hero-content max-w-2xl"&gt;
+            &lt;h1 class="text-5xl font-light mb-6 leading-tight"&gt;
+                Main Title &lt;span class="text-secondary font-medium"&gt;Highlight&lt;/span&gt;
+            &lt;/h1&gt;
+            &lt;p class="text-lg mb-8 max-w-xl"&gt;
+                Hero description text.
+            &lt;/p&gt;
+            &lt;div class="flex space-x-4"&gt;
+                &lt;a href="#" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition"&gt;
+                    Primary Action
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                    </div>
+
+                    <div>
+                        <p class="font-medium mb-2">Content Section with Container:</p>
+                        <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-xs"><code>&lt;section class="py-16"&gt;
+    &lt;div class="container mx-auto px-4"&gt;
+        &lt;h2 class="text-3xl font-medium mb-6 text-primary"&gt;Section Title&lt;/h2&gt;
+        &lt;!-- Content here --&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                    </div>
+
+                    <div>
+                        <p class="font-medium mb-2">Responsive Grid Layout:</p>
+                        <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-xs"><code>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"&gt;
+    &lt;!-- Grid items --&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div>
+                        <p class="font-medium mb-2">Required CSS for Hero Gradient:</p>
+                        <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-xs"><code>.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(238, 236, 230, 0.9) 0%,
+        rgba(238, 236, 230, 0.7) 50%,
+        rgba(238, 236, 230, 0.1) 100%
+    );
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

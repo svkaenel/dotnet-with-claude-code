@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRS Card Examples</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#282824", secondary: "#BC002D" },
+                    borderRadius: {
+                        button: "8px",
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #EEECE6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Noto Sans JP', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        /* Card animations from site.css */
+        .news-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .seminar-card {
+            transition: transform 0.3s ease;
+        }
+        .seminar-card:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="p-8">
+    <div class="container mx-auto max-w-6xl">
+        <h1 class="text-4xl font-bold mb-8 text-primary">SRS Card Examples</h1>
+
+        <!-- News/Blog Cards -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-medium mb-6 text-primary">News/Blog Cards</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Standard News Card -->
+                <div class="news-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <a href="#">
+                        <img src="https://picsum.photos/400/200?random=1" alt="News Article" class="w-full h-48 object-cover object-top" />
+                    </a>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs text-gray-500">17.01.2025</span>
+                            <span class="text-xs bg-[#DDD6CC] px-2 py-1 rounded-full">Karate</span>
+                        </div>
+                        <h3 class="text-md mb-3 font-medium">
+                            <a href="#">Neuer Trainingsplan für 2025</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Erfahren Sie mehr über unsere neuen Trainingszeiten und -methoden für das kommende Jahr.
+                        </p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            Weitere Informationen
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News Card with Multiple Tags -->
+                <div class="news-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <a href="#">
+                        <img src="https://picsum.photos/400/200?random=2" alt="News Article" class="w-full h-48 object-cover object-top" />
+                    </a>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs text-gray-500">15.01.2025</span>
+                            <div class="flex gap-1">
+                                <span class="text-xs bg-[#DDD6CC] px-2 py-1 rounded-full">Seminar</span>
+                                <span class="text-xs bg-[#DDD6CC] px-2 py-1 rounded-full">Kobudo</span>
+                            </div>
+                        </div>
+                        <h3 class="text-md mb-3 font-medium">
+                            <a href="#">Kobudo-Seminar im März</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Melden Sie sich jetzt für unser Kobudo-Intensivseminar mit internationalen Meistern an.
+                        </p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            Weitere Informationen
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News Card (Simple) -->
+                <div class="news-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <a href="#">
+                        <img src="https://picsum.photos/400/200?random=3" alt="News Article" class="w-full h-48 object-cover object-top" />
+                    </a>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs text-gray-500">10.01.2025</span>
+                            <span class="text-xs bg-[#DDD6CC] px-2 py-1 rounded-full">Verein</span>
+                        </div>
+                        <h3 class="text-md mb-3 font-medium">
+                            <a href="#">Jahreshauptversammlung 2025</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Einladung zur Jahreshauptversammlung der SRS Karate-Union Deutschland e.V.
+                        </p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            Weitere Informationen
+                            <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Cards -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-medium mb-6 text-primary">Product Cards</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Available Product -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://picsum.photos/400/400?random=4" alt="Product" class="w-full h-48 object-cover object-top" />
+                        </a>
+                        <div class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded-full text-xs">
+                            Verfügbar
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-md mb-2 font-medium">
+                            <a href="#">Karate-Gi Premium</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Hochwertiger Karate-Anzug aus 100% Baumwolle
+                        </p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-primary">€89.99</span>
+                            <span class="text-xs bg-[#DDD6CC] px-2 py-1 rounded-full">Bekleidung</span>
+                        </div>
+                        <a href="#" class="w-full bg-primary text-white py-2 px-4 mb-2 !rounded-[8px] hover:bg-opacity-90 transition text-sm font-medium flex items-center justify-center gap-2 whitespace-nowrap">
+                            <i class="ri-info-card-line"></i>
+                            Details
+                        </a>
+                        <button class="w-full bg-secondary text-white py-2 !rounded-[8px] hover:bg-opacity-90 transition whitespace-nowrap">
+                            In den Warenkorb
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Unavailable Product -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://picsum.photos/400/400?random=5" alt="Product" class="w-full h-48 object-cover object-top" />
+                        </a>
+                        <div class="absolute top-3 right-3 bg-red-500 text-white px-2 py-1 rounded-full text-xs">
+                            Nicht verfügbar
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-md mb-2 font-medium">
+                            <a href="#">Bo-Stab Eiche</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Traditioneller Kobudo Bo aus massiver Eiche
+                        </p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-primary">€45.00</span>
+                            <span class="text-xs bg-[#DDD6CC] px-2 py-1 rounded-full">Waffen</span>
+                        </div>
+                        <a href="#" class="w-full bg-primary text-white py-2 px-4 mb-2 !rounded-[8px] hover:bg-opacity-90 transition text-sm font-medium flex items-center justify-center gap-2 whitespace-nowrap">
+                            <i class="ri-info-card-line"></i>
+                            Details
+                        </a>
+                        <button class="w-full bg-secondary text-white py-2 !rounded-[8px] opacity-70 cursor-not-allowed whitespace-nowrap" disabled>
+                            Nicht verfügbar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product with Sale Price -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://picsum.photos/400/400?random=6" alt="Product" class="w-full h-48 object-cover object-top" />
+                        </a>
+                        <div class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded-full text-xs">
+                            Verfügbar
+                        </div>
+                        <div class="absolute top-3 left-3 bg-secondary text-white px-2 py-1 rounded-full text-xs font-bold">
+                            -20%
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-md mb-2 font-medium">
+                            <a href="#">Trainings-Makiwara</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Professionelle Schlagpolster für Zuhause
+                        </p>
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex flex-col">
+                                <span class="text-2xl font-bold text-primary">€79.99</span>
+                                <span class="text-sm text-gray-400 line-through">€99.99</span>
+                            </div>
+                            <span class="text-xs bg-[#DDD6CC] px-2 py-1 rounded-full">Ausrüstung</span>
+                        </div>
+                        <a href="#" class="w-full bg-primary text-white py-2 px-4 mb-2 !rounded-[8px] hover:bg-opacity-90 transition text-sm font-medium flex items-center justify-center gap-2 whitespace-nowrap">
+                            <i class="ri-info-card-line"></i>
+                            Details
+                        </a>
+                        <button class="w-full bg-secondary text-white py-2 !rounded-[8px] hover:bg-opacity-90 transition whitespace-nowrap">
+                            In den Warenkorb
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event Product -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://picsum.photos/400/400?random=7" alt="Product" class="w-full h-48 object-cover object-top" />
+                        </a>
+                        <div class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded-full text-xs">
+                            Verfügbar
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-md mb-2 font-medium">
+                            <a href="#">Seminar-Ticket</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4 text-sm">
+                            Wochenend-Seminar mit Sensei Yamamoto
+                        </p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-primary">€120.00</span>
+                            <span class="text-xs bg-[#DDD6CC] px-2 py-1 rounded-full">Event</span>
+                        </div>
+                        <a href="#" class="w-full bg-primary text-white py-2 px-4 mb-2 !rounded-[8px] hover:bg-opacity-90 transition text-sm font-medium flex items-center justify-center gap-2 whitespace-nowrap">
+                            <i class="ri-info-card-line"></i>
+                            Details
+                        </a>
+                        <button class="w-full bg-secondary text-white py-2 !rounded-[8px] hover:bg-opacity-90 transition whitespace-nowrap">
+                            Jetzt buchen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seminar Cards -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-medium mb-6 text-primary">Seminar Cards</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Standard Seminar Card -->
+                <div class="seminar-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <a href="#">
+                        <img src="https://picsum.photos/400/250?random=8" alt="Seminar" class="w-full h-48 object-cover" />
+                    </a>
+                    <div class="p-6">
+                        <span class="text-xs text-secondary font-medium">15.03.2025 - 17.03.2025</span>
+                        <h3 class="text-md mb-2 font-medium mt-2">
+                            <a href="#">Frühjahrsseminar 2025</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-2">
+                            <i class="ri-map-pin-line text-secondary"></i>
+                            Dojo Hamburg
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            <i class="ri-user-line text-secondary"></i>
+                            Sensei Tanaka (8. Dan)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Seminar Card with Status -->
+                <div class="seminar-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://picsum.photos/400/250?random=9" alt="Seminar" class="w-full h-48 object-cover" />
+                        </a>
+                        <div class="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                            Plätze verfügbar
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-secondary font-medium">20.04.2025 - 21.04.2025</span>
+                        <h3 class="text-md mb-2 font-medium mt-2">
+                            <a href="#">Kobudo Waffenseminar</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-2">
+                            <i class="ri-map-pin-line text-secondary"></i>
+                            Dojo München
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            <i class="ri-user-line text-secondary"></i>
+                            Sensei Kobayashi (7. Dan)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Seminar Card - Fully Booked -->
+                <div class="seminar-card bg-white rounded-lg overflow-hidden shadow-md opacity-75">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://picsum.photos/400/250?random=10" alt="Seminar" class="w-full h-48 object-cover" />
+                        </a>
+                        <div class="absolute top-3 right-3 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                            Ausgebucht
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-secondary font-medium">01.02.2025 - 02.02.2025</span>
+                        <h3 class="text-md mb-2 font-medium mt-2">
+                            <a href="#">Kata-Intensivtraining</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-2">
+                            <i class="ri-map-pin-line text-secondary"></i>
+                            Dojo Berlin
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            <i class="ri-user-line text-secondary"></i>
+                            Sensei Schmidt (6. Dan)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Examples -->
+        <section class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-medium mb-4 text-primary">Code Examples</h2>
+
+            <div class="space-y-6">
+                <div>
+                    <p class="font-medium mb-2">News Card HTML:</p>
+                    <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-xs"><code>&lt;div class="news-card bg-white rounded-lg overflow-hidden shadow-md"&gt;
+    &lt;a href="/news/@Model.Slug"&gt;
+        &lt;img src="/assets/@Model.Image" alt="@Model.Title" class="w-full h-48 object-cover object-top" /&gt;
+    &lt;/a&gt;
+    &lt;div class="p-6"&gt;
+        &lt;div class="flex justify-between items-center mb-3"&gt;
+            &lt;span class="text-xs text-gray-500"&gt;@Model.CreatedAtFormatted&lt;/span&gt;
+            &lt;span class="text-xs bg-[#DDD6CC] px-2 py-1 rounded-full"&gt;Tag&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;h3 class="text-md mb-3 font-medium"&gt;
+            &lt;a href="/news/@Model.Slug"&gt;@Model.Title&lt;/a&gt;
+        &lt;/h3&gt;
+        &lt;p class="text-gray-600 mb-4"&gt;@Model.Description&lt;/p&gt;
+        &lt;a href="/news/@Model.Slug" class="text-primary font-medium flex items-center"&gt;
+            Weitere Informationen
+            &lt;i class="ri-arrow-right-line ml-1"&gt;&lt;/i&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <div>
+                    <p class="font-medium mb-2">Product Card HTML:</p>
+                    <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-xs"><code>&lt;div class="product-card bg-white rounded-lg overflow-hidden shadow-md"&gt;
+    &lt;div class="relative"&gt;
+        &lt;a href="/shop/@Model.Slug"&gt;
+            &lt;img src="/assets/@Model.Image" alt="@Model.Name" class="w-full h-48 object-cover object-top" /&gt;
+        &lt;/a&gt;
+        &lt;div class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded-full text-xs"&gt;
+            Verfügbar
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="p-6"&gt;
+        &lt;h3 class="text-md mb-2 font-medium"&gt;
+            &lt;a href="/shop/@Model.Slug"&gt;@Model.Name&lt;/a&gt;
+        &lt;/h3&gt;
+        &lt;p class="text-gray-600 mb-4 text-sm"&gt;@Model.Description&lt;/p&gt;
+        &lt;div class="flex justify-between items-center mb-4"&gt;
+            &lt;span class="text-2xl font-bold text-primary"&gt;€@Model.Price&lt;/span&gt;
+            &lt;span class="text-xs bg-[#DDD6CC] px-2 py-1 rounded-full"&gt;Tag&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;!-- Action buttons --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <div>
+                    <p class="font-medium mb-2">Required CSS (from site.css):</p>
+                    <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-xs"><code>.news-card, .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.news-card:hover, .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.seminar-card {
+    transition: transform 0.3s ease;
+}
+.seminar-card:hover {
+    transform: scale(1.02);
+}</code></pre>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

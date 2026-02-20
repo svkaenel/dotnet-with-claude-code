@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRS Form Examples</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#282824", secondary: "#BC002D" },
+                    borderRadius: {
+                        button: "8px",
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #EEECE6;
+        }
+        h1, h2, h3 {
+            font-family: 'Noto Sans JP', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        /* Custom checkbox */
+        .custom-checkbox {
+            appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #d1d5db;
+            border-radius: 0.25rem;
+            background-color: white;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .custom-checkbox:checked {
+            border-color: #282824;
+            background-color: #282824;
+        }
+        .custom-checkbox:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: white;
+            font-size: 0.75rem;
+            transform: translate(-50%, -50%);
+            line-height: 1;
+        }
+
+        /* Custom radio */
+        .custom-radio {
+            appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #d1d5db;
+            border-radius: 50%;
+            background-color: white;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .custom-radio:checked {
+            border-color: #282824;
+            background-color: #282824;
+        }
+        .custom-radio:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Form error states */
+        .form-field .error-message {
+            display: none;
+            color: #BC002D;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        .form-field.has-error .error-message {
+            display: block;
+        }
+        .form-field.has-error input,
+        .form-field.has-error textarea {
+            border-color: #BC002D;
+            box-shadow: 0 0 0 3px rgba(188, 0, 45, 0.1);
+        }
+    </style>
+</head>
+<body class="p-8">
+    <div class="container mx-auto max-w-4xl">
+        <h1 class="text-4xl font-bold mb-8 text-primary">SRS Form Examples</h1>
+
+        <!-- Complete Contact Form -->
+        <section class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-medium mb-6 text-primary">Complete Contact Form</h2>
+
+            <form class="space-y-6">
+                <!-- Radio Button Group -->
+                <div class="form-field">
+                    <label class="block text-sm font-medium text-gray-700 mb-3">Ich bin ein *</label>
+                    <div class="flex space-x-6">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="senderType" value="dojo" class="custom-radio" required />
+                            <span class="ml-3">Dojo</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="senderType" value="individual" class="custom-radio" required />
+                            <span class="ml-3">Interessent</span>
+                        </label>
+                    </div>
+                    <div class="error-message">
+                        Bitte wählen Sie aus, ob Sie ein Dojo oder Interessent sind.
+                    </div>
+                </div>
+
+                <!-- Text Input -->
+                <div class="form-field">
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                        Name *
+                    </label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm"
+                        placeholder="Max Mustermann"
+                    />
+                    <div class="error-message">
+                        Bitte geben Sie Ihren Namen ein.
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="form-field">
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                        E-Mail-Adresse *
+                    </label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm"
+                        placeholder="max@beispiel.de"
+                    />
+                    <div class="error-message">
+                        Bitte geben Sie eine gültige E-Mail-Adresse ein.
+                    </div>
+                </div>
+
+                <!-- Phone Input -->
+                <div class="form-field">
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                        Telefonnummer
+                    </label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm"
+                        placeholder="+49 123 456789"
+                    />
+                </div>
+
+                <!-- Checkbox Group -->
+                <div class="form-field">
+                    <label class="block text-sm font-medium text-gray-700 mb-3">
+                        Interesse an
+                    </label>
+                    <div class="space-y-3">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" name="interests" value="karate" class="custom-checkbox" />
+                            <span class="ml-3">Karate</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" name="interests" value="kobudo" class="custom-checkbox" />
+                            <span class="ml-3">Kobudo</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" name="interests" value="seminar" class="custom-checkbox" />
+                            <span class="ml-3">Seminare</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Select Dropdown -->
+                <div class="form-field">
+                    <label for="dojo" class="block text-sm font-medium text-gray-700 mb-2">
+                        Dojo auswählen
+                    </label>
+                    <select
+                        id="dojo"
+                        name="dojo"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm"
+                    >
+                        <option value="">Bitte wählen...</option>
+                        <option value="berlin">Dojo Berlin</option>
+                        <option value="hamburg">Dojo Hamburg</option>
+                        <option value="muenchen">Dojo München</option>
+                        <option value="koeln">Dojo Köln</option>
+                    </select>
+                </div>
+
+                <!-- Textarea -->
+                <div class="form-field">
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                        Nachricht *
+                    </label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition resize-vertical text-sm"
+                        placeholder="Teilen Sie uns mit, wie wir Ihnen helfen können..."
+                    ></textarea>
+                    <div class="error-message">
+                        Bitte geben Sie Ihre Nachricht ein.
+                    </div>
+                </div>
+
+                <!-- Privacy Checkbox -->
+                <div class="form-field">
+                    <label class="flex items-start cursor-pointer">
+                        <input type="checkbox" name="privacy" class="custom-checkbox mt-1" required />
+                        <span class="ml-3 text-sm text-gray-600">
+                            Ich habe die <a href="#" class="text-secondary hover:underline">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+                        </span>
+                    </label>
+                    <div class="error-message ml-8">
+                        Bitte akzeptieren Sie die Datenschutzerklärung.
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-4">
+                    <button
+                        type="submit"
+                        class="w-full bg-primary text-white px-6 py-3 !rounded-[8px] hover:bg-opacity-90 transition duration-200 font-medium whitespace-nowrap"
+                    >
+                        <span class="flex items-center justify-center">
+                            <i class="ri-send-plane-line mr-2"></i>
+                            Nachricht senden
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Field Examples -->
+        <section class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-medium mb-6 text-primary">Individual Field Examples</h2>
+
+            <div class="space-y-8">
+                <!-- Text Input Variations -->
+                <div>
+                    <h3 class="text-lg font-medium mb-4 text-primary">Text Inputs</h3>
+                    <div class="space-y-4">
+                        <div class="form-field">
+                            <label for="text1" class="block text-sm font-medium text-gray-700 mb-2">Standard Text Input</label>
+                            <input type="text" id="text1" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm" placeholder="Enter text..." />
+                        </div>
+
+                        <div class="form-field">
+                            <label for="text2" class="block text-sm font-medium text-gray-700 mb-2">With Helper Text</label>
+                            <input type="text" id="text2" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm" />
+                            <p class="text-xs text-gray-500 mt-1">Helper text appears below the input</p>
+                        </div>
+
+                        <div class="form-field has-error">
+                            <label for="text3" class="block text-sm font-medium text-gray-700 mb-2">With Error State</label>
+                            <input type="text" id="text3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm" />
+                            <div class="error-message">This field is required.</div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="text4" class="block text-sm font-medium text-gray-700 mb-2">Disabled Input</label>
+                            <input type="text" id="text4" class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-100 text-sm" disabled value="Disabled value" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radio Groups -->
+                <div>
+                    <h3 class="text-lg font-medium mb-4 text-primary">Radio Button Groups</h3>
+                    <div class="space-y-4">
+                        <div class="form-field">
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Horizontal Layout</label>
+                            <div class="flex space-x-6">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="radio1" value="1" class="custom-radio" />
+                                    <span class="ml-3">Option 1</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="radio1" value="2" class="custom-radio" />
+                                    <span class="ml-3">Option 2</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="radio1" value="3" class="custom-radio" />
+                                    <span class="ml-3">Option 3</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Vertical Layout</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="radio2" value="1" class="custom-radio" />
+                                    <span class="ml-3">Option 1</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="radio2" value="2" class="custom-radio" />
+                                    <span class="ml-3">Option 2</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="radio2" value="3" class="custom-radio" />
+                                    <span class="ml-3">Option 3</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Checkboxes -->
+                <div>
+                    <h3 class="text-lg font-medium mb-4 text-primary">Checkboxes</h3>
+                    <div class="space-y-4">
+                        <div class="form-field">
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Multiple Choice</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" name="check1" value="1" class="custom-checkbox" />
+                                    <span class="ml-3">Checkbox 1</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" name="check1" value="2" class="custom-checkbox" checked />
+                                    <span class="ml-3">Checkbox 2 (Checked)</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" name="check1" value="3" class="custom-checkbox" />
+                                    <span class="ml-3">Checkbox 3</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label class="flex items-start cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox mt-1" />
+                                <span class="ml-3 text-sm">
+                                    Single checkbox with longer text that may wrap to multiple lines. Often used for terms and conditions or privacy policies.
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Select Dropdown -->
+                <div>
+                    <h3 class="text-lg font-medium mb-4 text-primary">Select Dropdowns</h3>
+                    <div class="space-y-4">
+                        <div class="form-field">
+                            <label for="select1" class="block text-sm font-medium text-gray-700 mb-2">Standard Dropdown</label>
+                            <select id="select1" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm">
+                                <option value="">Bitte wählen...</option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="select2" class="block text-sm font-medium text-gray-700 mb-2">With Optgroups</label>
+                            <select id="select2" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm">
+                                <option value="">Bitte wählen...</option>
+                                <optgroup label="Karate">
+                                    <option value="kata">Kata</option>
+                                    <option value="kumite">Kumite</option>
+                                </optgroup>
+                                <optgroup label="Kobudo">
+                                    <option value="bo">Bo</option>
+                                    <option value="sai">Sai</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Textarea -->
+                <div>
+                    <h3 class="text-lg font-medium mb-4 text-primary">Textareas</h3>
+                    <div class="space-y-4">
+                        <div class="form-field">
+                            <label for="textarea1" class="block text-sm font-medium text-gray-700 mb-2">Standard Textarea</label>
+                            <textarea id="textarea1" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition resize-vertical text-sm" placeholder="Enter your message..."></textarea>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="textarea2" class="block text-sm font-medium text-gray-700 mb-2">With Character Count</label>
+                            <textarea id="textarea2" rows="4" maxlength="500" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition resize-vertical text-sm"></textarea>
+                            <p class="text-xs text-gray-500 mt-1 text-right">0 / 500 Zeichen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Examples -->
+        <section class="bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-2xl font-medium mb-6 text-primary">Code Examples</h2>
+
+            <div class="space-y-6">
+                <div>
+                    <p class="font-medium mb-2">Form Structure:</p>
+                    <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-xs"><code>&lt;form method="post" class="space-y-6"&gt;
+    @Html.AntiForgeryToken()
+    &lt;!-- Form fields here --&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+
+                <div>
+                    <p class="font-medium mb-2">Text Input Field:</p>
+                    <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-xs"><code>&lt;div class="form-field"&gt;
+    &lt;label for="name" class="block text-sm font-medium text-gray-700 mb-2"&gt;
+        Name *
+    &lt;/label&gt;
+    &lt;input type="text" id="name" name="Name" required
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm" /&gt;
+    &lt;div class="error-message"&gt;
+        Please enter your name.
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <div>
+                    <p class="font-medium mb-2">Custom Radio Buttons:</p>
+                    <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-xs"><code>&lt;div class="flex space-x-6"&gt;
+    &lt;label class="flex items-center cursor-pointer"&gt;
+        &lt;input type="radio" name="option" value="1" class="custom-radio" /&gt;
+        &lt;span class="ml-3"&gt;Option 1&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="flex items-center cursor-pointer"&gt;
+        &lt;input type="radio" name="option" value="2" class="custom-radio" /&gt;
+        &lt;span class="ml-3"&gt;Option 2&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <div>
+                    <p class="font-medium mb-2">Custom Checkboxes:</p>
+                    <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-xs"><code>&lt;div class="space-y-3"&gt;
+    &lt;label class="flex items-center cursor-pointer"&gt;
+        &lt;input type="checkbox" name="interests" value="karate" class="custom-checkbox" /&gt;
+        &lt;span class="ml-3"&gt;Karate&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="flex items-center cursor-pointer"&gt;
+        &lt;input type="checkbox" name="interests" value="kobudo" class="custom-checkbox" /&gt;
+        &lt;span class="ml-3"&gt;Kobudo&lt;/span&gt;
+    &lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

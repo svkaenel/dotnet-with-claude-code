@@ -1,0 +1,100 @@
+# Skill Information
+
+**Name**: dotnet-code-standards
+**Version**: 1.1.0
+**Created**: 2025-01-19
+**Author**: Claude (based on evanto coding standards)
+
+## Description
+
+Comprehensive C# .NET coding standards skill enforcing naming conventions, formatting patterns, logging practices, async/await usage, LINQ optimization, and testing patterns.
+
+## Structure
+
+```
+dotnet-code-standards/
+├── SKILL.md                    # Complete skill instructions (18KB)
+├── README.md                   # Documentation and overview (6KB)
+├── QUICKREF.md                 # Quick reference card (6KB)
+├── .skillinfo                  # This file
+└── examples/                   # Working code examples
+    ├── class-structure.cs      # Complete class with all patterns (11KB)
+    ├── async-patterns.cs       # Async/await best practices (10KB)
+    ├── logging-patterns.cs     # LoggerMessage delegates (10KB)
+    ├── test-patterns.cs        # xUnit test patterns (19KB)
+    ├── guard-clauses.cs        # Modern guard clauses (12KB)
+    └── linq-patterns.cs        # Efficient LINQ patterns (16KB)
+```
+
+## Key Features
+
+- **Naming Conventions**: m prefix, .NET types, class prefixes/suffixes
+- **Formatting Rules**: Vertical alignment, block comments, spacing
+- **Modern C# 12–14**: Primary constructors, collection expressions, records, `field` keyword, extension members, null-conditional assignment, `Lock` type, `params` collections, partial members
+- **Logging**: LoggerMessage delegates (CA1848 performance rule)
+- **Async Patterns**: Async suffix, CancellationToken, ConfigureAwait
+- **LINQ**: Materialize once, method syntax, efficiency patterns
+- **Testing**: xUnit structure, naming, arrange-act-assert
+- **Guard Clauses**: Modern throw helpers (ArgumentException, etc.)
+
+## Coverage
+
+The skill provides comprehensive coverage of:
+
+✅ Member variable naming and organization
+✅ XML documentation format
+✅ Primary constructor usage
+✅ Guard clause patterns
+✅ LoggerMessage delegate patterns
+✅ Async/await best practices
+✅ LINQ optimization techniques
+✅ xUnit test structure
+✅ Error handling patterns
+✅ IDisposable implementation
+✅ Performance considerations
+
+## Example Count
+
+- 6 complete example files
+- ~500 lines of documented patterns
+- All examples follow the documented standards
+- Includes both ✅ correct and ❌ wrong examples
+
+## Extensions
+
+The skill has been extended beyond the original coding rules with:
+
+1. **Performance Patterns**: ArrayPool, Span<T>, readonly usage
+2. **Testing Guidance**: Complete xUnit patterns with Moq
+3. **LINQ Optimization**: Deferred execution, materialization, efficiency
+4. **Error Handling**: Custom exception hierarchy, Result pattern
+5. **Modern C# 12–14**: Collection expressions, records, primary constructors, `field` keyword, extension members, null-conditional assignment, implicit span conversions, `Lock` type, `params` collections, partial properties/constructors/events
+
+## Validation
+
+Skill structure follows Agent Skills specification:
+- ✅ SKILL.md with clear instructions
+- ✅ README.md with documentation
+- ✅ QUICKREF.md for quick reference
+- ✅ examples/ directory with working code
+- ✅ Clear descriptions and workflows
+
+## Usage
+
+This skill is automatically available to Claude when working in the current codebase. Claude will reference these standards when:
+
+- Writing new C# classes or methods
+- Reviewing or refactoring code
+- Implementing services, providers, or view models
+- Creating unit tests
+- Adding logging
+- Optimizing LINQ queries
+
+## Maintenance
+
+To update this skill:
+1. Modify SKILL.md with new rules/patterns
+2. Add corresponding examples to examples/
+3. Update QUICKREF.md if adding common patterns
+4. Update README.md with major changes
+5. Increment version in README.md and this file

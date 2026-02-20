@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRS Button Examples</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#282824", secondary: "#BC002D" },
+                    borderRadius: {
+                        button: "8px",
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #EEECE6;
+        }
+    </style>
+</head>
+<body class="p-8">
+    <div class="container mx-auto max-w-4xl">
+        <h1 class="text-4xl font-bold mb-8 text-primary">SRS Button Examples</h1>
+
+        <!-- Primary Buttons -->
+        <section class="bg-white p-6 rounded-lg mb-8 shadow-md">
+            <h2 class="text-2xl font-medium mb-4 text-primary">Primary Buttons</h2>
+
+            <div class="space-y-4">
+                <!-- Standard Primary -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Standard Primary Button:</p>
+                    <button class="bg-primary text-white px-6 py-3 !rounded-[8px] hover:bg-opacity-90 transition whitespace-nowrap">
+                        Primary Button
+                    </button>
+                </div>
+
+                <!-- Primary with Icon -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Primary Button with Icon:</p>
+                    <button class="bg-primary text-white px-6 py-3 !rounded-[8px] hover:bg-opacity-90 transition flex items-center gap-2 whitespace-nowrap">
+                        <i class="ri-send-plane-line"></i>
+                        <span>Send Message</span>
+                    </button>
+                </div>
+
+                <!-- Small Primary -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Small Primary Button:</p>
+                    <button class="bg-primary text-white px-4 py-2 text-sm !rounded-[8px] hover:bg-opacity-90 transition whitespace-nowrap">
+                        Small Button
+                    </button>
+                </div>
+
+                <!-- Large Primary -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Large Primary Button:</p>
+                    <button class="bg-primary text-white px-8 py-4 text-lg !rounded-[8px] hover:bg-opacity-90 transition whitespace-nowrap">
+                        Large Button
+                    </button>
+                </div>
+
+                <!-- Full Width Primary -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Full Width Primary Button:</p>
+                    <button class="w-full bg-primary text-white px-6 py-3 !rounded-[8px] hover:bg-opacity-90 transition whitespace-nowrap">
+                        Full Width Button
+                    </button>
+                </div>
+
+                <!-- Disabled Primary -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Disabled Primary Button:</p>
+                    <button class="bg-primary text-white px-6 py-3 !rounded-[8px] opacity-70 cursor-not-allowed whitespace-nowrap" disabled>
+                        Disabled Button
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secondary Buttons -->
+        <section class="bg-white p-6 rounded-lg mb-8 shadow-md">
+            <h2 class="text-2xl font-medium mb-4 text-primary">Secondary Buttons</h2>
+
+            <div class="space-y-4">
+                <!-- Standard Secondary -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Standard Secondary Button:</p>
+                    <button class="bg-secondary text-white px-6 py-3 !rounded-[8px] hover:bg-opacity-90 transition whitespace-nowrap">
+                        Secondary Button
+                    </button>
+                </div>
+
+                <!-- Secondary with Icon -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Secondary Button with Icon:</p>
+                    <button class="bg-secondary text-white px-6 py-3 !rounded-[8px] hover:bg-opacity-90 transition flex items-center gap-2 whitespace-nowrap">
+                        <i class="ri-shopping-cart-line"></i>
+                        <span>In den Warenkorb</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outlined Buttons -->
+        <section class="bg-white p-6 rounded-lg mb-8 shadow-md">
+            <h2 class="text-2xl font-medium mb-4 text-primary">Outlined Buttons</h2>
+
+            <div class="space-y-4">
+                <!-- Outlined Primary -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Outlined Primary Button:</p>
+                    <button class="border-2 border-primary px-6 py-3 !rounded-[8px] hover:bg-primary hover:text-white transition whitespace-nowrap">
+                        Outlined Button
+                    </button>
+                </div>
+
+                <!-- Outlined with Icon -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Outlined Button with Icon:</p>
+                    <button class="border-2 border-primary px-6 py-3 !rounded-[8px] hover:bg-primary hover:text-white transition flex items-center gap-2 whitespace-nowrap">
+                        <i class="ri-arrow-right-line"></i>
+                        <span>Learn More</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Button Groups -->
+        <section class="bg-white p-6 rounded-lg mb-8 shadow-md">
+            <h2 class="text-2xl font-medium mb-4 text-primary">Button Groups</h2>
+
+            <div class="space-y-4">
+                <!-- Horizontal Group -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Horizontal Button Group:</p>
+                    <div class="flex space-x-4">
+                        <button class="bg-primary text-white px-6 py-3 !rounded-[8px] hover:bg-opacity-90 transition whitespace-nowrap">
+                            Primary Action
+                        </button>
+                        <button class="border-2 border-primary px-6 py-3 !rounded-[8px] hover:bg-primary hover:text-white transition whitespace-nowrap">
+                            Secondary Action
+                        </button>
+                    </div>
+                </div>
+
+                <!-- With Icons -->
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Button Group with Icons:</p>
+                    <div class="flex space-x-4">
+                        <button class="bg-primary text-white px-6 py-3 !rounded-[8px] hover:bg-opacity-90 transition flex items-center gap-2 whitespace-nowrap">
+                            <i class="ri-add-line"></i>
+                            <span>Create</span>
+                        </button>
+                        <button class="bg-secondary text-white px-6 py-3 !rounded-[8px] hover:bg-opacity-90 transition flex items-center gap-2 whitespace-nowrap">
+                            <i class="ri-save-line"></i>
+                            <span>Save</span>
+                        </button>
+                        <button class="border-2 border-primary px-6 py-3 !rounded-[8px] hover:bg-primary hover:text-white transition flex items-center gap-2 whitespace-nowrap">
+                            <i class="ri-close-line"></i>
+                            <span>Cancel</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Icon-Only Buttons -->
+        <section class="bg-white p-6 rounded-lg mb-8 shadow-md">
+            <h2 class="text-2xl font-medium mb-4 text-primary">Icon-Only Buttons</h2>
+
+            <div class="space-y-4">
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Icon Buttons:</p>
+                    <div class="flex space-x-4">
+                        <button class="w-10 h-10 bg-primary text-white !rounded-[8px] hover:bg-opacity-90 transition flex items-center justify-center">
+                            <i class="ri-close-line text-xl"></i>
+                        </button>
+                        <button class="w-10 h-10 bg-secondary text-white !rounded-[8px] hover:bg-opacity-90 transition flex items-center justify-center">
+                            <i class="ri-add-line text-xl"></i>
+                        </button>
+                        <button class="w-10 h-10 border-2 border-primary !rounded-[8px] hover:bg-primary hover:text-white transition flex items-center justify-center">
+                            <i class="ri-search-line text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="text-sm text-gray-600 mb-2">Round Icon Buttons:</p>
+                    <div class="flex space-x-4">
+                        <button class="w-12 h-12 bg-primary text-white rounded-full hover:bg-opacity-90 transition flex items-center justify-center">
+                            <i class="ri-arrow-up-line text-xl"></i>
+                        </button>
+                        <button class="w-12 h-12 bg-secondary text-white rounded-full hover:bg-opacity-90 transition flex items-center justify-center">
+                            <i class="ri-heart-line text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Examples -->
+        <section class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-medium mb-4 text-primary">Code Examples</h2>
+
+            <div class="space-y-4">
+                <div>
+                    <p class="font-medium mb-2">Primary Button HTML:</p>
+                    <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm"><code>&lt;button class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition whitespace-nowrap"&gt;
+    Button Text
+&lt;/button&gt;</code></pre>
+                </div>
+
+                <div>
+                    <p class="font-medium mb-2">Secondary Button HTML:</p>
+                    <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm"><code>&lt;button class="bg-secondary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition whitespace-nowrap"&gt;
+    Call to Action
+&lt;/button&gt;</code></pre>
+                </div>
+
+                <div>
+                    <p class="font-medium mb-2">Outlined Button HTML:</p>
+                    <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm"><code>&lt;button class="border-2 border-primary px-6 py-3 !rounded-button hover:bg-primary hover:text-white transition whitespace-nowrap"&gt;
+    Outlined Action
+&lt;/button&gt;</code></pre>
+                </div>
+
+                <div>
+                    <p class="font-medium mb-2">Button with Icon HTML:</p>
+                    <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm"><code>&lt;button class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition flex items-center gap-2 whitespace-nowrap"&gt;
+    &lt;i class="ri-send-plane-line"&gt;&lt;/i&gt;
+    &lt;span&gt;Send Message&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section class="bg-white p-6 rounded-lg shadow-md mt-8">
+            <h2 class="text-2xl font-medium mb-4 text-primary">Best Practices</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li><strong>Always use <code>!rounded-button</code></strong> (8px radius) for consistent button styling</li>
+                <li>Include <code>whitespace-nowrap</code> to prevent text wrapping on buttons</li>
+                <li>Add <code>transition</code> class for smooth hover effects</li>
+                <li>Use <code>hover:bg-opacity-90</code> for primary/secondary button hover states</li>
+                <li>Use <code>hover:bg-primary hover:text-white</code> for outlined button hover states</li>
+                <li>Add <code>flex items-center gap-2</code> when combining text with icons</li>
+                <li>Use primary (#282824) for main actions, secondary (#BC002D) for CTAs</li>
+                <li>Include <code>disabled</code> attribute and <code>opacity-70 cursor-not-allowed</code> for disabled states</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
