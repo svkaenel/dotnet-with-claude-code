@@ -8,7 +8,11 @@ The AI agent only gets the context you are appending to the PRD and training dat
 
 ## Generally important
 
+- If critical information is missing or if there are implementation alternatives, ask clarifying questions before generating any code
+- Hint me also for things I may have overseen or topics which also probably have to covered. 
+
 Always use:
+
 - serena for semantic code retrieval and editing tools
 - context7 for up to date documentation on third party code
 - playwright for UI analysis and testing
