@@ -34,6 +34,7 @@ Skills erweitern Claude Code mit Wissen zu bestimmten Tools, Frameworks, Code-St
 | [`skills/directus-dotnet-repository/`](skills/directus-dotnet-repository/) | Directus Headless CMS Integration -- Filtering, Pagination, CRUD-Operationen und Authentifizierung mit einem eigenen C# Client. |
 | [`skills/evanto-paypal-client/`](skills/evanto-paypal-client/) | PayPal-Integration in ASP.NET -- Einmalzahlungen, Subscriptions, SEPA, Webhooks und Fee-Berechnung. |
 | [`skills/project-xy-design-guide/`](skills/project-xy-design-guide/) | Beispiel eines projektspezifischen UI-Design-Guides -- Tailwind CSS Klassen, Farbschema, Komponentenstruktur. |
+| [`skills/dotnet-security-owasp/`](skills/dotnet-security-owasp/) | OWASP Top 10 (2021) Sicherheitsleitfaden -- .NET-spezifische Mitigations für Injection, Broken Access Control, XSS, SSRF, veraltete APIs (CAS, BinaryFormatter, .NET Remoting) und Security-Header-Konfiguration. Dient als Wissensschicht für den `owasp-security-audit` Subagenten. |
 
 ## Subagents
 
@@ -42,6 +43,7 @@ Spezialisierte, autonom arbeitende Agents für klar eingegrenzte Aufgaben.
 | Datei | Beschreibung |
 |---|---|
 | [`agents/seo-optimization-expert.md`](agents/seo-optimization-expert.md) | SEO-Subagent (Sonnet) -- Technische SEO-Audits, On-Page-Optimierungen und automatisierte Verifikation via Playwright. |
+| [`agents/owasp-security-audit.md`](agents/owasp-security-audit.md) | Autonomer OWASP-Security-Auditor -- Systematischer Scan der .NET-Codebasis auf OWASP-Top-10-Verletzungen mit strukturiertem Findings-Report (Schweregrad, Datei-Positionen, Behebungshinweise). Referenziert den `dotnet-security-owasp` Skill als Wissensquelle. |
 
 ## PRDs (Product Requirements Documents)
 
